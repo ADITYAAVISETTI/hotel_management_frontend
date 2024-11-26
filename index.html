@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Welcome to UNIVERSE</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>UNIVERSE Hotels</h1>
+        <nav>
+          <ul>
+            <li><a href="#" onclick="displayLogin()">Login</a></li>
+            <li><a href="#" onclick="displayReg()">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome-section">
+        <div id="welcome-section">
+          <h2>Discover Comfort and Luxury</h2><br>
+          <p>Book your stay with us for a memorable experience.</p><br>
+          <button class="book-now-btn" onclick="displayLogin()">Book Now</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="login" style="display: none;" id="loginAct">
+          <form action="" class="form">
+            <h1 class="head">Login</h1>
+
+            <div class="content">
+              <div class="box">
+                <i class="ri-user-3-line login__icon"></i>
+
+                <div class="box-input">
+                  <input type="email" required class="input" id="login-email" placeholder="" />
+                  <label for="login-email" class="login__label">Email</label>
+                </div>
+              </div>
+
+              <div class="box">
+                <i class="ri-lock-2-line login__icon"></i>
+
+                <div class="box-input">
+                  <input
+                    type="password"
+                    required
+                    class="input"
+                    id="login-pass"
+                    placeholder=""
+                  />
+                  <label for="login-pass" class="login__label">Password</label>
+                  <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="tick">
+              <div class="tick-group">
+                <input type="checkbox" class="tick-input" id="login-check" />
+                <label for="login-is-admin" class="tick-label">Login as admin</label>
+              </div>
+
+              <!-- Add other elements if needed -->
+              <a href="#" class="forgot">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="button">Login</button>
+
+            <p class="register">Don't have an account? <span onclick="displayReg()">Register</span></p>
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <div class="login" style="display:none;" id="registerAct">
+          <form action="" class="form">
+            <h1 class="head">Register</h1>
+
+            <div class="content">
+              <div class="box">
+                <i class="ri-user-3-line login__icon"></i>
+
+                <div class="box-input">
+                  <input type="text" required class="input" id="register-name" placeholder="" />
+                  <label for="register-name" class="login__label">User-Name</label>
+                </div>
+              </div>
+
+              <div class="box">
+                <i class="ri-mail-add-fill login__icon"></i>
+
+                <div class="box-input">
+                  <input type="email" required class="input" id="register-email" placeholder="" />
+                  <label for="login-email" class="login__label">Email</label>
+                </div>
+              </div>
+
+              <div class="box">
+                <i class="ri-lock-2-line login__icon"></i>
+
+                <div class="box-input">
+                  <input
+                    type="password"
+                    required
+                    class="input"
+                    id="register-pass"
+                    placeholder=""
+                  />
+                  <label for="register-pass" class="login__label">Password</label>
+                  <i class="ri-eye-off-line register__eye" id="register-eye"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="tick">
+              <div class="tick-group">
+                <input type="checkbox" class="tick-input" id="register-is-admin" />
+                <label for="register-is-admin" class="tick-label">Register as admin</label>
+              </div>
+            </div> -->
+
+            <button type="submit" class="button">Register</button>
+
+            <p class="register">already have an account? <span onclick="displayLogin()">Login</span></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Hotel Booking. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

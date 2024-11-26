@@ -1,0 +1,167 @@
+/* General Reset */
+body, h1, p, div, table, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-image: url("/assets/img/hotel-1831072.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading (Left-Aligned) */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* Navigation Buttons (Right-Aligned) */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    background-color: hsla(0, 0%, 10%, 0.3);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #0099e5;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 153, 229, 0.4);
+    transform: scale(1.05);
+}
+
+/* Main Section */
+main {
+    padding: 40px 20px;
+}
+
+/* Form Container */
+#form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input and Select Styling */
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.selectbox{
+    width: 85% !important;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0099e5;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #007acc;
+    transform: scale(1.05);
+}
+
+/* Table Styling */
+#bookings-list table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#bookings-list th {
+    background-color: #0099e5;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#bookings-list td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Action Buttons in Table */
+#bookings-list button.edit {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+#bookings-list button.edit:hover {
+    background-color: #45a049;
+}
+
+#bookings-list button.delete {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: #fff;
+    cursor: pointer;
+}
+
+#bookings-list button.delete:hover {
+    background-color: #d32f2f;
+}

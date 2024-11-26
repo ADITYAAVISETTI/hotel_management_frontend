@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel-Room Booking</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h4 id="arr">Hotel Booking</h4>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="displayBookingForm()">Book Room</a></li>
+                    <li><a href="#" onclick="displayListRooms()">List Bookings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="create" class="form-container">
+        <form id="create-form">
+            <h2 id="head">Room Booking for USER</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="Area">Area:</label>
+                    <select name="Area" id="area">
+                        <option hidden>Select Area</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Bangalore">Bangalore</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Location">Location:</label>
+                    <select name="Location" id="Location"></select>
+                </div>
+                <div class="form-group">
+                    <label for="HotelName">Hotel Name:</label>
+                    <select name="hotel_name" id="hotel_name"></select>
+                </div>
+                <div class="form-group">
+                    <label for="RoomNo">Room Type:</label>
+                    <select name="room_name" id="room_name"></select>
+                </div>
+                <div class="form-group">
+                    <label>Price:</label>
+                    <div id="Price"></div>
+                </div>
+            </div>
+            <button type="submit" id="submit-button">Create Booking</button>
+        </form>
+    </div>
+
+    <table id="bookList"  style="display: none;" >
+        <thead>
+            <tr>
+                <th>Hotel Name</th>
+                <th>Room Type</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Area</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="booking-list"></tbody>
+    </table>
+
+    <script src="booking.js"></script>
+</body>
+</html>

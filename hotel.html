@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hotel.css">
+    <title>Hotel Bookings</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Hotel Bookings</h1>
+            <div class="nav-buttons">
+                <div class="nav-button" onclick="displayHotelForm()">Add Hotel</div>
+                <div class="nav-button" onclick="displayListHotels()">List Hotels</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="form-container" style="display: none;">
+            <form id="booking-form">
+                <select id="area" class="selectbox"required>
+                    <option value="">Select Area</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bangalore">Bangalore</option>
+                </select>
+                <input type="text" id="name" placeholder="Name of the Hotel" required>
+                <input type="text" id="amenities" placeholder="Amenities" required>
+                <input type="text" id="location" placeholder="Location" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="bookings-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Area</th>
+                        <th>Amenities</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="hotel.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Management</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+
+  <!-- <link rel="website icon" type="png" href="./assets/img/Untold Coding.png" /> -->
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>ASGARD Hotel</h1>
+            <nav>
+                <ul>
+                    <li><a href="./booking.html">BOOK-ROOM</a></li>
+                    <li id="username"></li>
+                    <li id="logoutBtn" onclick="logout()">Logout</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div id="welcome-section">
+              <h2>Discover Comfort and Luxury</h2><br>
+              <p>Book your stay with us for a memorable experience.</p><br>
+              <button class="book-now-btn" onclick="redirectToBookRoom()">Book Now</button>
+            </div>
+          </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Hotel Booking. All rights reserved.</p>
+    </footer>
+
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p>Are you sure you want to logout?</p>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
+      
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const authToken = localStorage.getItem('auth-token');
+
+    if (!authToken) {
+        window.location.href = "../index.html";
+    }
+});
+
+
+const logout = ()=>{
+  const confirm = window.confirm('Are you sure want to confirm');
+  if(confirm){
+    localStorage.removeItem('auth-token');
+    location.reload();
+  }
+  
+}
+
+
+const username = localStorage.getItem('username');
+
+const usernameElement = document.getElementById("username");
+if (usernameElement) {
+  usernameElement.textContent = username;
+}
+
+function redirectToBookRoom() {
+    window.location.href = "./booking.html";
+}
+
+window.onload = getUsername;
+
+
+</script>
+</html>

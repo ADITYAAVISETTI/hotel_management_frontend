@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url("/assets/img/hotel-1831072.jpg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Container */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsla(0, 0%, 10%, 0.1);
+            padding: 0px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        /* Navigation Buttons (Right-Aligned) */
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background-color: hsla(0, 0%, 10%, 0.3);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background-color: #0099e5;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 153, 229, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Form Styling */
+        form {
+            padding: 20px;
+            max-width: 450px;
+            margin: 20px auto;
+            /* background-color: #fff; */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        select {
+            margin-top: 5px;
+            width: 100%;
+            padding: 12px;
+            display: block;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            margin-top: 5px;
+            width: 94%;
+            padding: 12px;
+            display: block;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+
+        }
+
+        button {
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0099e5;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #007acc;
+            transform: scale(1.05);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            margin: 30px auto;
+            background-color: #fff;
+            /* border-radius: 10px; */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #roomTable th {
+            background-color: #0099e5;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        #roomTable td {
+            padding: 14px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Action Buttons in Table */
+        #roomTable button.edit {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #roomTable button.edit:hover {
+            background-color: #45a049;
+        }
+
+        #roomTable button.delete {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f44336;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #roomTable button.delete:hover {
+            background-color: #d32f2f;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Room Management for Hotels</h1>
+            <div class="nav-buttons">
+                <div class="nav-button" onclick="displayRoomForm()">Add Room</div>
+                <div class="nav-button" onclick="displayListRooms()">List Rooms</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add Room Form -->
+    <form id="roomForm" style="display: block;">
+        <input id="roomId" hidden>
+        <label for="city_name">Select City:</label>
+        <select name="city_name" id="city_name">
+            <option hidden>Select City</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Bangalore">Bangalore</option>
+        </select>
+        <label for="location_name">Select Location:</label>
+        <select name="location_name" id="location_name">
+        </select>
+        <label for="hotel_name">Select Hotel:</label>
+        <select name="hotel_name" id="hotel_name">
+        </select>
+
+        <label for="room_type">Room Type :</label>
+        <input type="text" placeholder="Room Type" name="room_type" id="room_type">
+        <label for="capacity">Number of persons :</label>
+        <input type="number" placeholder="Capacity" name="capacity" id="capacity">
+        <label for="bed_type">Bed Type :</label>
+        <input type="text" placeholder="Bed Type" name="bed_configuration" id="bed_type">
+        <label for="price">Price :</label>
+        <input type="number" placeholder="Price" name="price" id="price">
+        <label for="discount">Discount :</label>
+        <input type="number" placeholder="Discount" name="discount" id="discount">
+        <button type="submit" id="submitButton">Add/Update Room</button>
+    </form>
+
+    <!-- Room Table -->
+    <table id="roomTable">
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Location</th>
+                <th>Hotel Name</th>
+                <th>Room Type</th>
+                <th>Capacity</th>
+                <th>Bed Type</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="roomData">
+        </tbody>
+    </table>
+
+    <script src="rooms.js"></script>
+</body>
+
+</html>
